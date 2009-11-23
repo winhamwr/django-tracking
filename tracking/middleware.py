@@ -49,7 +49,7 @@ class VisitorTrackingMiddleware:
         prefixes = utils.get_untracked_prefixes()
 
         # don't track media file requests
-        if settings.MEDIA_URL:
+        if settings.MEDIA_URL and settings.MEDIA_URL != '/':
             prefixes.append(settings.MEDIA_URL)
         if settings.ADMIN_MEDIA_PREFIX:
             prefixes.append(settings.ADMIN_MEDIA_PREFIX)
